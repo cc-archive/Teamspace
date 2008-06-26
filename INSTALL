@@ -1,0 +1,41 @@
+== CcTeamSpace Install ==
+See http://wiki.creativecommons.org/CcTeamspace for up to date information.
+
+Requirements:
+
+    * Web Server such as Apache or IIS
+    * PHP version 5.0 or later (5.1.x recommended)
+    * Database Server MySQL 4.0 or later 
+
+Follow these five steps to install ccTeamspace on your server :
+
+(1) MediaWiki : MediaWiki is a free software wiki package used for Wikipedia and many other wikis. It's the basis of the ccTeamspace software. Follow the MediaWiki installation guide to complete the installation of your wiki.
+    http://www.mediawiki.org/wiki/Manual:Installation_guide installation guide
+
+(2) Semantic MediaWiki: On this MediaWiki installation, we will add some semantic features. Download Semantic MediaWiki and follow the four installation steps.
+    http://semantic-mediawiki.org/wiki/Help:Installation#Installation four installation steps
+
+(3) Add Semantic Extensions: All of the following extensions are needed:
+
+    * Semantic Drilldown
+        http://www.mediawiki.org/wiki/Extension:Semantic_Drilldown
+    * ParserFunctions
+        http://meta.wikimedia.org/wiki/ParserFunctions ParserFunctions
+    * Header Tabs
+        http://www.mediawiki.org/wiki/Extension:Header_Tabs
+    * Semantic Forms: edit your pages with forms
+        http://www.mediawiki.org/wiki/Extension:Semantic_Forms
+    * Semantic Calendar: use a monthly calendar to display your tasks (Don't forget to consider this point during installation)
+        http://www.mediawiki.org/wiki/Extension:Semantic_Calendar
+    * SemanticTasks: email notifications and reminders. 
+        http://www.mediawiki.org/wiki/Extension:SemanticTasks
+
+(4) Import the ccTeamspace structure:
+
+    * Log in with your Sysops account and go to the Special:Import page to import the Teamspace-data.xml file. 
+
+(5) Refresh the semantic data with a script: Move the php file ./extensions/SemanticMediaWiki/maintenance/SMW_refreshData.php to the ./maintenance/ directory of your MediaWiki installation. Then execute the SMW_refreshData.php script to create the semantic data in your database.
+
+  php maintenance/SMW_refreshData.php
+
+If this produce an error due to Semantic Calendar, just comment the Semantic Calendar include line in your file LocalSettings.php, restart the script and then uncomment the previous line. 
