@@ -1,0 +1,1521 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.3/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.3/ http://www.mediawiki.org/xml/export-0.3.xsd" version="0.3" xml:lang="en">
+  <siteinfo>
+    <sitename>Teamspace</sitename>
+    <base>http://teamspace.creativecommons.org/Main_Page</base>
+    <generator>MediaWiki 1.12.0</generator>
+    <case>first-letter</case>
+      <namespaces>
+      <namespace key="-2">Media</namespace>
+      <namespace key="-1">Special</namespace>
+      <namespace key="0" />
+      <namespace key="1">Talk</namespace>
+      <namespace key="2">User</namespace>
+      <namespace key="3">User talk</namespace>
+      <namespace key="4">Teamspace</namespace>
+      <namespace key="5">Teamspace talk</namespace>
+      <namespace key="6">Image</namespace>
+      <namespace key="7">Image talk</namespace>
+      <namespace key="8">MediaWiki</namespace>
+      <namespace key="9">MediaWiki talk</namespace>
+      <namespace key="10">Template</namespace>
+      <namespace key="11">Template talk</namespace>
+      <namespace key="12">Help</namespace>
+      <namespace key="13">Help talk</namespace>
+      <namespace key="14">Category</namespace>
+      <namespace key="15">Category talk</namespace>
+      <namespace key="100">Relation</namespace>
+      <namespace key="101">Relation talk</namespace>
+      <namespace key="102">Property</namespace>
+      <namespace key="103">Property talk</namespace>
+      <namespace key="104">Type</namespace>
+      <namespace key="105">Type talk</namespace>
+      <namespace key="106">Form</namespace>
+      <namespace key="107">Form talk</namespace>
+      <namespace key="170">Filter</namespace>
+      <namespace key="171">Filter talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Template:Task</title>
+    <id>3509</id>
+    <revision>
+      <id>15921</id>
+      <timestamp>2008-06-20T15:38:37Z</timestamp>
+      <contributor>
+        <username>Steren Giannini</username>
+        <id>66</id>
+      </contributor>
+      <text xml:space="preserve">= Task Information =
+
+'''Target Date:''' [[target date::{{{target_date}}}]]
+
+'''Actual Completion Date:''' {{#if: {{{completion_date|}}} | [[Completed On::{{{completion_date}}}]] | }}
+
+'''Status:''' [[status::{{{status}}}]]
+
+'''Priority:''' {{ #if: {{{priority|}}} | [[priority::{{{priority}}}]] | not specified }}
+
+'''% Completeness:''' {{ #if: {{{completeness|}}} | [[completeness::{{{completeness}}}]]% | not specified }}
+
+'''Assigned To:''' {{#if: {{{assigned to|}}} | {{#arraymap:{{{assigned to}}}|,|x|[[assigned to::User:x]]}} | no one }}
+
+'''Projects:''' {{ #if: {{{projects|}}} | {{#arraymap:{{{projects}}}|,|x|[[Belongs to project::x]]}} | (none) }}
+
+'''Tags:''' {{ #if: {{{tags|}}} | {{#arraymap:{{{tags}}}|,|x|[[tag::x]]}} | (none) }}
+
+= Time Tracking =
+
+'''Estimated Person-Days:''' {{ #if: {{{estimated|}}} | [[estimated days::{{{estimated}}}]] | unknown }}
+
+'''Person-Days Remaining:''' {{ #if: {{{remaining|}}} | [[days to complete::{{{remaining}}}]] | unknown }}
+
+'''Total Actual Person-Days:''' {{ #if: {{{actual|}}} | [[actual days::{{{actual}}}]] | unknown }}
+
+= Relations =
+
+'''Websites:''' {{ #if: {{{websites|}}} | {{#arraymap:{{{websites}}}|,|x|[[website::x]]}} | (none) }}
+
+'''Category:''' {{ #if: {{{category|}}} | [[Category:{{{category}}}]] [[{{{category}}}]] | (none) }} 
+
+'''Contacts:''' {{ #if: {{{contacts|}}} | {{#arraymap:{{{contacts}}}|,|x|[[Is contact::x]] ({{#ask:
+[[x]] [[Belongs to::*]]|}}) }} | (none) }}
+
+= Reminders =
+
+'''Reminder at:''' {{ #if: {{{reminder|}}} | {{#arraymap:{{{reminder}}}|,|x|[[Reminder at::x]]}} | 0 }}
+
+
+&lt;headertabs/&gt;
+__NOTOC__
+[[Category:Task]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Form:Task</title>
+    <id>3521</id>
+    <revision>
+      <id>15923</id>
+      <timestamp>2008-06-20T15:44:15Z</timestamp>
+      <contributor>
+        <username>Steren Giannini</username>
+        <id>66</id>
+      </contributor>
+      <comment>hide tabler of content</comment>
+      <text xml:space="preserve">__NOTOC__
+&lt;noinclude&gt;
+This is the 'Task' form; edit the page to see the source code. You can add data with this form [[Special:AddPage/Task|here]].
+&lt;/noinclude&gt;
+&lt;includeonly&gt;
+{{{info|add title=Add Task|edit title=Edit Task}}}
+
+= Task Information =
+
+{{{for template|Task}}}
+   &lt;p&gt;&lt;strong&gt;Target date:&lt;/strong&gt; {{{field|target_date|default=Now}}}&lt;/p&gt;
+   &lt;p&gt;&lt;strong&gt;Date Completed:&lt;/strong&gt; {{{field|completion_date}}}&lt;/p&gt;
+   &lt;p&gt;&lt;strong&gt;Status:&lt;/strong&gt; {{{field|status|default=New}}}&lt;/p&gt;
+   &lt;p&gt;&lt;strong&gt;Priority:&lt;/strong&gt; {{{field|priority|default=2}}}&lt;/p&gt;
+   &lt;p&gt;&lt;strong&gt;% Complete:&lt;/strong&gt; {{{field|completeness|default=0}}}&lt;/p&gt;
+   &lt;p&gt;&lt;strong&gt;Assigned to:&lt;/strong&gt; {{{field|assigned to|list|autocomplete on namespace=User}}}&lt;/p&gt;
+   &lt;p&gt;&lt;strong&gt;Projects:&lt;/strong&gt; {{{field|projects|list|autocomplete on=Project}}}&lt;/p&gt;
+   &lt;p&gt;&lt;strong&gt;Tags:&lt;/strong&gt; {{{field|tags}}}&lt;/p&gt;
+
+= Time Tracking =
+   &lt;p&gt;&lt;strong&gt;Estimated Person-Days:&lt;/strong&gt; {{{field|estimated}}}&lt;/p&gt;
+   &lt;p&gt;&lt;strong&gt;Person-Days Remaining:&lt;/strong&gt; {{{field|remaining}}}&lt;/p&gt;
+   &lt;p&gt;&lt;strong&gt;Total Actual Person-Days:&lt;/strong&gt; {{{field|actual}}}&lt;/p&gt;
+
+= Relations =
+
+   &lt;p&gt;&lt;strong&gt;Associated Websites:&lt;/strong&gt; {{{field|websites|list|autocomplete on=Website}}}&lt;/p&gt;
+   &lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; {{{field|category|autocomplete on namespace=Category}}}&lt;/p&gt;
+   &lt;p&gt;&lt;strong&gt;Contacts:&lt;/strong&gt; {{{field|contacts|list|autocomplete on=Contact}}}&lt;/p&gt;
+
+= Reminders =
+
+   &lt;p&gt;&lt;strong&gt;Remind me &lt;/strong&gt; {{{field|reminder|default=20,15,7,3}}} days before Target date&lt;/p&gt;
+
+{{{end template}}}
+
+&lt;headertabs/&gt;
+
+'''Details:'''
+
+{{{field|free text}}}
+
+
+{{{standard input|summary}}}
+
+{{{standard input|minor edit}}} {{{standard input|watch}}}
+
+{{{standard input|save}}} {{{standard input|preview}}} {{{standard input|changes}}} {{{standard input|cancel}}}
+
+&lt;/includeonly&gt;</text>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Task</title>
+    <id>3515</id>
+    <revision>
+      <id>15795</id>
+      <timestamp>2008-06-17T17:41:06Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve">&lt;div align=&quot;center&quot;&gt;
+{{#forminput:Task|35||Add/Edit Task/Status|}}
+&lt;/div&gt;
+[[Has default form::Form:Task| ]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Template:User Tasks</title>
+    <id>4942</id>
+    <revision>
+      <id>13763</id>
+      <timestamp>2008-04-23T19:03:20Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve">__NOTOC__
+
+= Dashboard =
+
+&lt;div style=&quot;width:400px; border:1px #000 solid; padding:10px; background:#DDD;text-align:center; margin:auto;&quot;&gt;{{#forminput:Task|35||Add Task|Task[assigned to]={{{1|{{PAGENAME}}}}} }}&lt;/div&gt;
+
+{{#semantic_calendar:
+Target date
+|[[Category:Task]][[Status::New||In Progress]][[Assigned to::{{{1|{{NAMESPACE}}:{{PAGENAME}}}}}]]
+}}
+
+= Past Due =
+
+{{#ask:
+[[Category:Task]] 
+[[Assigned to::{{{1|{{NAMESPACE}}:{{PAGENAME}}}}}]]
+[[Status::New||In Progress]]
+[[Target date::&lt;{{CURRENTTIMESTAMP}}]]
+[[Status::*]]
+[[Target date::*]]
+| sort=Target_date
+| default=Nothing to see here.  Nice goin', chief.
+}}
+
+= Open Tasks =
+
+{{#ask:
+[[Category:Task]] 
+[[Assigned to::{{{1|{{NAMESPACE}}:{{PAGENAME}}}}}]]
+[[Status::New||In Progress]]
+[[Status::*]]
+[[Target date::*]]
+| sort=Target_date
+}}
+
+= Deferred Tasks =
+
+{{#ask:
+[[Category:Task]] 
+[[Assigned to::{{{1|{{NAMESPACE}}:{{PAGENAME}}}}}]]
+[[Status::Deferred]]
+[[Status::*]]
+[[Target date::*]]
+| sort=Target_date
+}}
+
+= Completed Tasks =
+
+{{#ask:
+[[Category:Task]] 
+[[Assigned to::{{{1|{{NAMESPACE}}:{{PAGENAME}}}}}]]
+[[Status::Completed]]
+[[Status::*]]
+[[Target date::*]]
+| sort=Target_date
+}}
+
+&lt;headertabs /&gt;</text>
+    </revision>
+  </page>
+  <page>
+    <title>Form:Project</title>
+    <id>3687</id>
+    <revision>
+      <id>11916</id>
+      <timestamp>2008-02-11T22:00:17Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve">&lt;noinclude&gt;
+This is the 'Project' form; edit the page to see the source code. You can add data with this form [[Special:AddPage/Project|here]].
+&lt;/noinclude&gt;
+&lt;includeonly&gt;
+{{{info|add title=Add Project|edit title=Edit Project}}}
+
+{{{for template|Project}}}
+'''Category:''' {{{field|category|autocomplete on namespace=Category|list}}}
+{{{end template}}}
+
+{{{for template|Website Widget|label=Website URLS|multiple}}}
+'''URL:''' {{{field|1|autocomplete on=Website}}}
+{{{end template}}}
+
+== Additional Information ==
+{{{field|free text}}}
+
+&lt;/includeonly&gt;</text>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Project</title>
+    <id>3688</id>
+    <revision>
+      <id>14641</id>
+      <timestamp>2008-04-30T22:09:27Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve">&lt;noinclude&gt;
+This is the 'Project' template. It should be called in the following format:
+
+&lt;pre&gt;
+  {{{Project|
+     category=XXX
+  }}}
+&lt;/pre&gt;
+
+Edit the page to see the template text.
+&lt;/noinclude&gt;
+
+&lt;includeonly&gt;
+
+&lt;div style=&quot;border: 1px #000 solid; float:right; padding:10px; background: #DDD;&quot;&gt;{{#forminput:Task|35||Add New Task|super_page={{PAGENAME}}&amp;Task[projects]={{PAGENAME}}&amp;Task[category]={{ #if: {{{category|}}} | {{{category}}} | }} }}
+&lt;/div&gt;
+
+'''Category:''' {{ #if: {{{category|}}} | {{#arraymap:{{{category}}}|,|x|[[Category:x]] [[x]]}} | (none) }}
+
+'''Total Estimated Person-Days:''' 
+[[Estimated_days::{{#ask:
+[[Category:Task]] [[Belongs to project::{{PAGENAME}}]] [[Estimated_days::+]] [[Estimated_days::*]]|
+format=sum|
+}}]]
+
+'''Total Estimated Person-Days Remaining:''' 
+[[Days_to_complete::{{#ask:
+[[Category:Task]] [[Belongs to project::{{PAGENAME}}]] [[Days_to_complete::+]] [[Days_to_complete::*]]|
+format=sum|
+}}]]
+
+'''Total Actual Person-Days:''' 
+[[Actual_days::{{#ask:
+[[Category:Task]] [[Belongs to project::{{PAGENAME}}]] [[Actual_days::+]] [[Actual_days::*]]|
+format=sum|
+}}]]
+
+==  Open Tasks related to {{PAGENAME}} ==
+&lt;ask sort=&quot;Target_date&quot; limit=&quot;50&quot; link=&quot;all&quot; default=&quot;No open tasks.&quot;&gt;
+[[Category:Task]]
+[[Belongs to project::{{PAGENAME}}]]
+[[Category:*]]
+[[Status:=New||In Progress||Deferred]]
+[[Status:=*]]
+[[Priority:=*]]
+[[Completeness:=*|% Done]]
+[[Days to complete::*|Days Remaining (est.)]]
+[[Assigned to::*]]
+[[Target date:=+]]
+[[Target date:=*]]
+&lt;/ask&gt;
+
+==  Tasks completed related to {{PAGENAME}} ==
+&lt;ask sort=&quot;Target_date&quot; limit=&quot;50&quot; link=&quot;all&quot; default=&quot;No completed tasks.&quot;&gt;
+[[Category:Task]]
+[[Belongs to project::{{PAGENAME}}]]
+[[Status:=Completed]]
+[[Status:=*]]
+[[Priority:=*]]
+[[Completeness:=*|% Done]]
+[[Assigned to::*]]
+[[Target date:=+]]
+[[Target date:=*]]
+&lt;/ask&gt;
+&lt;/includeonly&gt;
+
+-----
+[[Category:Project]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Project</title>
+    <id>3699</id>
+    <revision>
+      <id>7546</id>
+      <timestamp>2007-11-01T21:47:06Z</timestamp>
+      <contributor>
+        <username>Jon Phillips</username>
+        <id>12</id>
+      </contributor>
+      <text xml:space="preserve">[[Has default form::Form:Project]]
+
+The '''Project''' category is used to categorize projects CC works on...
+[[Category:Project]]
+
+== Add/Edit Project ==
+
+&lt;div align=&quot;center&quot;&gt;
+{{#forminput:Project|35|Add/Edit Project|}}
+&lt;/div&gt;
+
+== By Project ==
+
+&lt;ask sort=Project format=broadtable mainlabel=Title&gt;
+[[Category:Project]]
+&lt;/ask&gt;</text>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Project Category</title>
+    <id>5074</id>
+    <revision>
+      <id>14336</id>
+      <timestamp>2008-04-24T22:05:50Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <comment>[[Template:Project Category]] moved to [[Template:Project Group]]</comment>
+      <text xml:space="preserve">#REDIRECT [[Template:Project Group]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Project Group</title>
+    <id>4769</id>
+    <revision>
+      <id>14640</id>
+      <timestamp>2008-04-30T21:37:11Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve">__NOTOC__
+= Projects =
+
+&lt;div style=&quot;width:400px; border:1px #000 solid; padding:10px; background:#DDD;text-align:center; margin:auto;&quot;&gt;{{#forminput:Project|35||Add Project|Project[category]={{PAGENAME}} }}&lt;/div&gt;
+
+
+{{#ask:
+[[Category:Project]]
+[[Category:{{PAGENAME}}]]
+[[Days_to_complete::*]]
+[[Estimated_days::*]]
+[[Actual_days::*]]|
+mainlabel=Project|
+link=&quot;all&quot;
+}}
+
+= Calendar =
+
+{{#semantic_calendar:
+Target date
+| [[Category:Task]] [[Category:{{PAGENAME}}]] [[Status::New||In Progress]]
+}}
+
+= Open Tasks =
+
+&lt;div style=&quot;width:400px; border:1px #000 solid; padding:10px; background:#DDD;text-align:center; margin:auto;&quot;&gt;{{#forminput:Task|35||Add Task|Task[category]={{PAGENAME}} }}&lt;/div&gt;
+
+
+{{#ask:
+[[Category:Task]]
+[[Category:{{PAGENAME}}]]
+[[Status::*]]
+[[Status::New||In Progress]]
+[[Days_to_complete::*]]
+[[Assigned to::*]]
+[[Target date::*]]
+[[Tag::*]]
+| mainlabel=Task
+| sort=Status
+}}
+
+= Completed Tasks =
+
+{{#ask:
+[[Category:Task]]
+[[Category:{{PAGENAME}}]]
+[[Status::Completed||Cancelled]]
+[[Status::*]]
+[[Assigned to::*]]
+[[Days_to_complete::*]]
+[[Estimated_days::*]]
+[[Actual_days::*]]
+[[Tag::*]]
+| mainlabel=Task
+}}
+
+= Deferred Tasks =
+
+{{#ask:
+[[Category:Task]]
+[[Category:{{PAGENAME}}]]
+[[Status::*]]
+[[Status::Deferred]]
+[[Days_to_complete::*]]
+[[Assigned to::*]]
+[[Target date::*]]
+[[Tag::*]]
+| mainlabel=Task
+}}
+
+
+&lt;ask format=template template=Project_User_Tasks link=none&gt;
+[[Category::Staff]]
+[[Category::{{PAGENAME}}]]
+&lt;/ask&gt;
+
+&lt;headertabs /&gt;
+
+[[Category:Project_Category]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Project Widget</title>
+    <id>3707</id>
+    <revision>
+      <id>12685</id>
+      <timestamp>2008-03-03T19:28:04Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve">'''Projects:''' {{ #if: {{{1|}}} | {{#arraymap:{{{1}}}|,|x|[[Belongs to project::{{{1}}}]] }} | (none) }}&lt;br/&gt;</text>
+    </revision>
+  </page>
+  <page>
+    <title>Form:Group</title>
+    <id>3573</id>
+    <revision>
+      <id>9053</id>
+      <timestamp>2007-11-27T18:31:48Z</timestamp>
+      <contributor>
+        <username>Jon Phillips</username>
+        <id>12</id>
+      </contributor>
+      <text xml:space="preserve">&lt;noinclude&gt;
+This is the 'Group' form; edit the page to see the source code. You can add data with this form [[Special:AddPage/Group|here]].
+&lt;/noinclude&gt;
+&lt;includeonly&gt;
+&lt;h2&gt;Group: {{{field|page title}}}&lt;/h2&gt;
+
+ {{{for template|Email Widget|label=Email Adresses|multiple}}}
+    &lt;p&gt;&lt;strong&gt;Email:&lt;/strong&gt; {{{field|1|autocomplete on=Email}}}&lt;/p&gt;
+ {{{end template}}}
+
+ {{{for template|Website Widget|label=Website URLS|multiple}}}
+    &lt;p&gt;&lt;strong&gt;URL:&lt;/strong&gt; {{{field|1|autocomplete on=Website}}}&lt;/p&gt;
+ {{{end template}}}
+
+ {{{for template|Phone Widget|label=Phone Numbers|multiple}}}
+    &lt;p&gt;&lt;strong&gt;Phone Number:&lt;/strong&gt; {{{field|1|autocomplete on=Phone}}}&lt;/p&gt;
+ {{{end template}}}
+
+ {{{for template|Contact Widget|label=Contacts|multiple}}}
+    &lt;p&gt;&lt;strong&gt;Name:&lt;/strong&gt; {{{field|1|autocomplete on=Contact}}}&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Department:&lt;/strong&gt; {{{field|3|autocomplete on=Department}}}&lt;/p&gt;
+ {{{end template}}}
+
+ {{{for template|Staff Widget|label=CC Staff Contact|multiple}}}
+    &lt;p&gt;&lt;strong&gt;Name:&lt;/strong&gt; {{{field|1|autocomplete on=Staff}}}&lt;/p&gt;
+ {{{end template}}}
+
+   &lt;fieldset&gt;&lt;legend&gt;Free text&lt;/legend&gt;
+   {{{field|free text}}}
+   &lt;/fieldset&gt;
+&lt;/includeonly&gt;</text>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Email Widget</title>
+    <id>3736</id>
+    <revision>
+      <id>7629</id>
+      <timestamp>2007-11-02T19:40:57Z</timestamp>
+      <contributor>
+        <username>Jon Phillips</username>
+        <id>12</id>
+      </contributor>
+      <comment>New page: '''E-mail:''' [[email:={{{1}}}]]</comment>
+      <text xml:space="preserve">'''E-mail:''' [[email:={{{1}}}]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Form:Presentation</title>
+    <id>5217</id>
+    <revision>
+      <id>15538</id>
+      <timestamp>2008-06-10T18:42:47Z</timestamp>
+      <contributor>
+        <username>Andy Brooks</username>
+        <id>53</id>
+      </contributor>
+      <text xml:space="preserve">&lt;noinclude&gt;
+This is the 'Presentation' form. To add a page with this form, enter the page name below; if a page with that name already exists, you will be sent to a form to edit that page. You can add data with this form [[Special:AddPage/Presentation|here]].
+&lt;/noinclude&gt;
+&lt;includeonly&gt;
+{{{info|add title=Add Presentation|edit title=Edit Presentation}}}
+
+{{{for template|Presentation}}}
+&lt;p&gt;&lt;strong&gt;Title:&lt;/strong&gt; {{{field|title}}}&lt;br/&gt;
+&lt;span class=&quot;helptext&quot;&gt;Optional; defaults to the page title.&lt;/span&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Date:&lt;/strong&gt; {{{field|date|date}}}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Presented at:&lt;/strong&gt; {{{field|event}}}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; {{{field|Category|autocomplete on namespace=Category}}}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tags:&lt;/strong&gt; {{{field|tags}}}&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;File:&lt;/strong&gt; {{{field|file|autocomplete on namespace=Image}}}&lt;span class=&quot;helptext&quot;&gt;You must first [http://teamspace.creativecommons.org/Special:Upload upload] the file.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ext Presentation URL:&lt;/strong&gt; {{{field|MainURL}}}&lt;/p&gt;
+
+{{{end template}}}
+
+'''Additional Information:'''
+{{{field|free text}}}
+&lt;/includeonly&gt;</text>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Staff</title>
+    <id>4266</id>
+    <revision>
+      <id>9131</id>
+      <timestamp>2007-11-28T00:42:25Z</timestamp>
+      <contributor>
+        <username>Jon Phillips</username>
+        <id>12</id>
+      </contributor>
+      <comment>New page: [[Has default form::Form:Staff Contact]]  The '''Staff Contact''' category is used to categorize [[Category:Staff]]  == Add/Edit Staff ==  &lt;div align=&quot;center&quot;&gt; {{#forminput:Staff Contact|3...</comment>
+      <text xml:space="preserve">[[Has default form::Form:Staff Contact]]
+
+The '''Staff Contact''' category is used to categorize
+[[Category:Staff]]
+
+== Add/Edit Staff ==
+
+&lt;div align=&quot;center&quot;&gt;
+{{#forminput:Staff Contact|35|Add/Edit Staff Member|}}
+&lt;/div&gt;
+
+== Staff Contacts for Groups ==
+
+&lt;ask sort=Group format=&quot;broadtable&quot; mainlabel=&quot;Title&quot; link=&quot;all&quot;&gt;
+[[Category:Group]]
+[[Is contact::*]]
+[[Staff contact is::*]]
+&lt;/ask&gt;</text>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Staff</title>
+    <id>4249</id>
+    <revision>
+      <id>13228</id>
+      <timestamp>2008-04-11T15:47:46Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve">[[Category:Staff]]
+
+&lt;noinclude&gt;
+&lt;!-- marking as such because it's not clear anyone's using this and we're not marking contacts this way in the tech realm --&gt;
+
+{{Contact}}
+
+
+==  Is Staff Contact for ==
+&lt;ask sort=&quot;Group&quot; format=&quot;broadtable&quot; limit=&quot;50&quot; link=&quot;all&quot; default=&quot;Is not the staff contact for any projects right now.&quot;&gt;
+[[Category:Group]]
+[[Staff contact is::{{PAGENAME}}|User:{{PAGENAME}}]]
+[[Is contact::*]]
+&lt;/ask&gt;
+&lt;/noinclude&gt;</text>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Staff Widget</title>
+    <id>4240</id>
+    <revision>
+      <id>9052</id>
+      <timestamp>2007-11-27T18:31:41Z</timestamp>
+      <contributor>
+        <username>Jon Phillips</username>
+        <id>12</id>
+      </contributor>
+      <comment>New page: '''Staff Contact:''' [[Staff contact is::{{{1}}}]]</comment>
+      <text xml:space="preserve">'''Staff Contact:''' [[Staff contact is::{{{1}}}]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Form:Staff Contact</title>
+    <id>4242</id>
+    <revision>
+      <id>9058</id>
+      <timestamp>2007-11-27T18:35:12Z</timestamp>
+      <contributor>
+        <username>Jon Phillips</username>
+        <id>12</id>
+      </contributor>
+      <text xml:space="preserve">&lt;noinclude&gt;
+This is the form for adding a staff contact, which is derived from the normal Contact
+&lt;/noinclude&gt;
+&lt;includeonly&gt;
+{{Form:Contact}}
+[[Category:Staff]]
+&lt;/includeonly&gt;</text>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Contact</title>
+    <id>3579</id>
+    <revision>
+      <id>12533</id>
+      <timestamp>2008-02-27T22:38:30Z</timestamp>
+      <contributor>
+        <username>Nathan Kinkade</username>
+        <id>35</id>
+      </contributor>
+      <text xml:space="preserve">[[Category:Contact]]
+
+==  Tasks with {{PAGENAME}} as Contact ==
+&lt;ask sort=&quot;Target_date&quot; limit=&quot;50&quot; link=&quot;all&quot; default=&quot;No current tasks with this person as contact.&quot;&gt;
+[[Category:Task]]
+[[Status:=New||In Progress]]
+[[Status:=*]]
+[[Priority:=*]]
+[[Completeness:=*|% Done]]
+[[Is contact::{{PAGENAME}}]]
+[[Assigned to::*]]
+[[Target date:=+]]
+[[Target date:=*]]
+&lt;/ask&gt;</text>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Contact Widget</title>
+    <id>3691</id>
+    <revision>
+      <id>12684</id>
+      <timestamp>2008-03-03T19:26:44Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve">'''Contacts:''' {{ #if: {{{1|}}} | {{#arraymap:{{{1}}}|,|x|[[Is contact::{{{1}}}]] ({{#ask:
+[[{{{1}}}]] [[Belongs to::*]]|}}) }} | (none) }}&lt;br/&gt;
+&lt;!--
+'''Contact:''' [[Is contact::{{{1}}}]] {{ #if: {{{2|}}} | '''from''' [[Related group is::{{{2}}}]] | }} {{ #if: {{{3|}}} | '''in''' [[{{{3}}}]] | }}&lt;br/&gt;
+--&gt;</text>
+    </revision>
+  </page>
+  <page>
+    <title>Template:Website Widget</title>
+    <id>3731</id>
+    <revision>
+      <id>12679</id>
+      <timestamp>2008-03-03T19:20:52Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve">'''Websites:''' {{ #if: {{{1|}}} | {{#arraymap:{{{1}}}|,|x|[[website::x]]}} | (none) }}&lt;br/&gt;</text>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Project Category</title>
+    <id>4937</id>
+    <revision>
+      <id>13179</id>
+      <timestamp>2008-04-09T17:35:12Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <comment>New page: &lt;div style=&quot;width:400px; border:1px #000 solid; padding:10px; background:#DDD;text-align:center; margin:auto;&quot;&gt; {{#forminput:Project Category|35||New Category| }} &lt;/div&gt;</comment>
+      <text xml:space="preserve">&lt;div style=&quot;width:400px; border:1px #000 solid; padding:10px; background:#DDD;text-align:center; margin:auto;&quot;&gt;
+{{#forminput:Project Category|35||New Category| }}
+&lt;/div&gt;</text>
+    </revision>
+  </page>
+  <page>
+    <title>Form:Project Category</title>
+    <id>4938</id>
+    <revision>
+      <id>13180</id>
+      <timestamp>2008-04-09T17:35:56Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <comment>New page: &lt;noinclude&gt; This is the 'Project Category' form. To add a page with this form, enter the page name below; if a page with that name already exists, you will be sent to a form to edit that p...</comment>
+      <text xml:space="preserve">&lt;noinclude&gt;
+This is the 'Project Category' form.
+To add a page with this form, enter the page name below;
+if a page with that name already exists, you will be sent to a form to edit that page.
+
+{{#forminput:Project Category}}
+
+&lt;/noinclude&gt;&lt;includeonly&gt;
+{{{for template|ProjectCategory}}}
+{| class=&quot;formtable&quot;
+|}
+{{{end template}}}
+
+'''Free text:'''
+
+{{{field|free text}}}
+
+
+{{{standard input|summary}}}
+
+{{{standard input|minor edit}}} {{{standard input|watch}}}
+
+{{{standard input|save}}} {{{standard input|preview}}} {{{standard input|changes}}} {{{standard input|cancel}}}
+&lt;/includeonly&gt;</text>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Role</title>
+    <id>3749</id>
+    <revision>
+      <id>7726</id>
+      <timestamp>2007-11-03T01:17:44Z</timestamp>
+      <contributor>
+        <username>Jon Phillips</username>
+        <id>12</id>
+      </contributor>
+      <comment>New page: [[has default form::Form:Role| ]] The '''Role''' category is used to categorize contacts roles. [[Category:Role]]  == Add/Edit Role ==  &lt;div align=&quot;center&quot;&gt; {{#forminput:Role|35|Add/Edit R...</comment>
+      <text xml:space="preserve">[[has default form::Form:Role| ]]
+The '''Role''' category is used to categorize contacts roles.
+[[Category:Role]]
+
+== Add/Edit Role ==
+
+&lt;div align=&quot;center&quot;&gt;
+{{#forminput:Role|35|Add/Edit Role|}}
+&lt;/div&gt;
+
+== By Group ==
+
+&lt;ask sort=Role format=broadtable mainlabel=Title&gt;
+[[Category:Role]]
+[[Is contact::*]]
+[[Belongs to::*]]
+&lt;/ask&gt;</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Actual days</title>
+    <id>4767</id>
+    <revision>
+      <id>11897</id>
+      <timestamp>2008-02-11T21:06:57Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <comment>New page: [[Has type::Type:Number]]</comment>
+      <text xml:space="preserve">[[Has type::Type:Number]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Aim</title>
+    <id>4024</id>
+    <revision>
+      <id>8243</id>
+      <timestamp>2007-11-08T20:59:25Z</timestamp>
+      <contributor>
+        <username>Rebecca Rojer</username>
+        <id>37</id>
+      </contributor>
+      <text xml:space="preserve">[[has type::Type:String]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Assigned to</title>
+    <id>3541</id>
+    <revision>
+      <id>10899</id>
+      <timestamp>2008-01-24T19:31:30Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <minor/>
+      <comment>[[Relation:Assigned to]] moved to [[Property:Assigned to]]</comment>
+      <text xml:space="preserve">One or more [[has type::Type:Page|users]] a task is assigned to.</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Belongs to</title>
+    <id>3715</id>
+    <revision>
+      <id>10902</id>
+      <timestamp>2008-01-24T19:33:40Z</timestamp>
+      <contributor>
+        <ip>127.0.0.1</ip>
+      </contributor>
+      <minor/>
+      <comment>[[Relation:Belongs to]] moved to [[Property:Belongs to]]: Unifying properties</comment>
+      <text xml:space="preserve">One or more [[has type::Type:Page|groups]] a user belongs to.
+
+Has a [[Has default form::Form:Group]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Belongs to department</title>
+    <id>3949</id>
+    <revision>
+      <id>10904</id>
+      <timestamp>2008-01-24T19:33:40Z</timestamp>
+      <contributor>
+        <ip>127.0.0.1</ip>
+      </contributor>
+      <minor/>
+      <comment>[[Relation:Belongs to department]] moved to [[Property:Belongs to department]]: Unifying properties</comment>
+      <text xml:space="preserve">One or more [[has type::Type:Page|groups]] a user belongs to.
+
+This is supposed to be a sub-type of Groups...
+
+Has a [[Has default form::Form:Group]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Belongs to project</title>
+    <id>3717</id>
+    <revision>
+      <id>10906</id>
+      <timestamp>2008-01-24T19:33:40Z</timestamp>
+      <contributor>
+        <ip>127.0.0.1</ip>
+      </contributor>
+      <minor/>
+      <comment>[[Relation:Belongs to project]] moved to [[Property:Belongs to project]]: Unifying properties</comment>
+      <text xml:space="preserve">One or more [[has type::Type:Page|projects]] something is part of.
+
+Has a [[Has default form::Form:Project]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Category</title>
+    <id>3578</id>
+    <revision>
+      <id>10512</id>
+      <timestamp>2008-01-11T17:59:32Z</timestamp>
+      <contributor>
+        <username>Paulproteus</username>
+        <id>44</id>
+      </contributor>
+      <text xml:space="preserve">'''Division''' is an [[has type::Type:Enumeration|enumeration]] which describes the CC &quot;category&quot; a [[Template:Task|task]] is assigned to.  Valid values:
+
+* [[allows value:=Technology|Technology]]
+* [[allows value:=BizDev|BizDev]]
+* [[allows value:=Design|Design]]
+* [[allows value:=Operations|Operations]]
+* [[allows value:=Legal|Legal]]
+* [[allows value:=Learn|Learn]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Completed On</title>
+    <id>5052</id>
+    <revision>
+      <id>13979</id>
+      <timestamp>2008-04-23T21:57:43Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <comment>New page: [[Has type::Type:Date]]</comment>
+      <text xml:space="preserve">[[Has type::Type:Date]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Completeness</title>
+    <id>3673</id>
+    <revision>
+      <id>7243</id>
+      <timestamp>2007-10-30T22:34:38Z</timestamp>
+      <contributor>
+        <username>Jon Phillips</username>
+        <id>12</id>
+      </contributor>
+      <minor/>
+      <text xml:space="preserve">'''Completeness''' is an [[has type::Type:Enumeration|enumeration]] which describes the status of a [[Template:Task|task]].  Valid values:
+
+* [[allows value:=0|0]]
+* [[allows value:=10|10]]
+* [[allows value:=20|20]]
+* [[allows value:=30|30]]
+* [[allows value:=40|40]]
+* [[allows value:=50|50]]
+* [[allows value:=60|60]]
+* [[allows value:=70|70]]
+* [[allows value:=80|80]]
+* [[allows value:=90|90]]
+* [[allows value:=100|100]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Contact email</title>
+    <id>3696</id>
+    <revision>
+      <id>7417</id>
+      <timestamp>2007-11-01T08:45:38Z</timestamp>
+      <contributor>
+        <username>Jon Phillips</username>
+        <id>12</id>
+      </contributor>
+      <comment>[[Attribute:Contact email]] moved to [[Attribute:Email]]</comment>
+      <text xml:space="preserve">#REDIRECT [[Attribute:Email]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Contact name</title>
+    <id>3577</id>
+    <revision>
+      <id>6256</id>
+      <timestamp>2007-09-18T17:26:11Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <comment>New page: [[has type::Type:String]]</comment>
+      <text xml:space="preserve">[[has type::Type:String]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Contact phone</title>
+    <id>3697</id>
+    <revision>
+      <id>7419</id>
+      <timestamp>2007-11-01T08:45:51Z</timestamp>
+      <contributor>
+        <username>Jon Phillips</username>
+        <id>12</id>
+      </contributor>
+      <comment>[[Attribute:Contact phone]] moved to [[Attribute:Phone]]</comment>
+      <text xml:space="preserve">#REDIRECT [[Attribute:Phone]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Contact website</title>
+    <id>3677</id>
+    <revision>
+      <id>7296</id>
+      <timestamp>2007-11-01T00:48:28Z</timestamp>
+      <contributor>
+        <username>Jon Phillips</username>
+        <id>12</id>
+      </contributor>
+      <comment>[[Attribute:Contact website]] moved to [[Attribute:Website]]</comment>
+      <text xml:space="preserve">#REDIRECT [[Attribute:Website]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Date</title>
+    <id>5221</id>
+    <revision>
+      <id>14894</id>
+      <timestamp>2008-05-07T23:50:14Z</timestamp>
+      <contributor>
+        <username>Andy Brooks</username>
+        <id>53</id>
+      </contributor>
+      <comment>New page: [[has type::Type:Date]]</comment>
+      <text xml:space="preserve">[[has type::Type:Date]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Days to complete</title>
+    <id>4719</id>
+    <revision>
+      <id>11555</id>
+      <timestamp>2008-01-29T21:45:24Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve">[[Has type::Type:Integer]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Division</title>
+    <id>3520</id>
+    <revision>
+      <id>5951</id>
+      <timestamp>2007-09-10T19:22:19Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve">'''Division''' is an [[has type::Type:Enumeration|enumeration]] which describes the CC &quot;division&quot; a [[Template:Task|task]] is assigned to.  Valid values:
+
+* [[allows value:=Core|Core]]
+* [[allows value:=CC|CC]]
+* [[allows value:=SC|SC]]
+* [[allows value:=Learn|Learn]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Email</title>
+    <id>3576</id>
+    <revision>
+      <id>7416</id>
+      <timestamp>2007-11-01T08:45:38Z</timestamp>
+      <contributor>
+        <username>Jon Phillips</username>
+        <id>12</id>
+      </contributor>
+      <minor/>
+      <comment>[[Attribute:Contact email]] moved to [[Attribute:Email]]</comment>
+      <text xml:space="preserve">[[has type::Type:Email]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Estimated days</title>
+    <id>4768</id>
+    <revision>
+      <id>11898</id>
+      <timestamp>2008-02-11T21:07:09Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <comment>New page: [[Has type::Type:Number]]</comment>
+      <text xml:space="preserve">[[Has type::Type:Number]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Ext Presentation URL</title>
+    <id>5229</id>
+    <revision>
+      <id>15012</id>
+      <timestamp>2008-05-10T04:18:45Z</timestamp>
+      <contributor>
+        <username>Andy Brooks</username>
+        <id>53</id>
+      </contributor>
+      <comment>New page: [[has type::Type:URL]]</comment>
+      <text xml:space="preserve">[[has type::Type:URL]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:File</title>
+    <id>5226</id>
+    <revision>
+      <id>14965</id>
+      <timestamp>2008-05-08T23:01:36Z</timestamp>
+      <contributor>
+        <username>Andy Brooks</username>
+        <id>53</id>
+      </contributor>
+      <text xml:space="preserve">[[has type::Type:URL]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:For CC Division</title>
+    <id>5082</id>
+    <revision>
+      <id>14366</id>
+      <timestamp>2008-04-25T00:33:54Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <comment>New page: This is a property of type [[Has type::String|String]].  The allowed values for this property are: * [[Allows value:=core]] * [[Allows value:=SC]] * [[Allows value:=ccLearn]]</comment>
+      <text xml:space="preserve">This is a property of type [[Has type::String|String]].
+
+The allowed values for this property are:
+* [[Allows value:=core]]
+* [[Allows value:=SC]]
+* [[Allows value:=ccLearn]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Has CiviCRM Contact</title>
+    <id>5093</id>
+    <revision>
+      <id>14431</id>
+      <timestamp>2008-04-25T17:19:31Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve">This is a property of type [[Has type::Page]]; it uses the [[Has default form::Form:CiviCRM Contact|CiviCRM Contact]] form for creating new entries.</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Has CiviCRM Link</title>
+    <id>5090</id>
+    <revision>
+      <id>14404</id>
+      <timestamp>2008-04-25T16:11:45Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <comment>New page: This is a property of type [[Has type::Annotation URI|Annotation URI]].</comment>
+      <text xml:space="preserve">This is a property of type [[Has type::Annotation URI|Annotation URI]].</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Has contact</title>
+    <id>3581</id>
+    <revision>
+      <id>14364</id>
+      <timestamp>2008-04-25T00:31:31Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve">This is a property of type [[has type::Type:Page]].  It uses the [[Has default form::Form:Contact]] form.</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Has default form</title>
+    <id>4700</id>
+    <revision>
+      <id>10924</id>
+      <timestamp>2008-01-24T19:52:45Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <comment>New page: [[Has type::Page]]</comment>
+      <text xml:space="preserve">[[Has type::Page]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Has grant status</title>
+    <id>5075</id>
+    <revision>
+      <id>14349</id>
+      <timestamp>2008-04-24T22:33:42Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve">This is a property of type [[Has type::String|String]].
+
+The allowed values for this property are:
+* [[Allows value:=prospect]]
+* [[Allows value:=active]]
+* [[Allows value:=in process - contract negotiation]]
+* [[Allows value:=in process - proposal due]]
+* [[Allows value:=in process - proposal submitted]]
+* [[Allows value:=closed]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Has role</title>
+    <id>3745</id>
+    <revision>
+      <id>10910</id>
+      <timestamp>2008-01-24T19:33:40Z</timestamp>
+      <contributor>
+        <ip>127.0.0.1</ip>
+      </contributor>
+      <minor/>
+      <comment>[[Relation:Has role]] moved to [[Property:Has role]]: Unifying properties</comment>
+      <text xml:space="preserve">One or more [[has type::Type:Page|roles]] a user has...
+
+Has a [[Has default form::Form:Role]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Is contact</title>
+    <id>3716</id>
+    <revision>
+      <id>10912</id>
+      <timestamp>2008-01-24T19:33:40Z</timestamp>
+      <contributor>
+        <ip>127.0.0.1</ip>
+      </contributor>
+      <minor/>
+      <comment>[[Relation:Is contact]] moved to [[Property:Is contact]]: Unifying properties</comment>
+      <text xml:space="preserve">One or more [[has type::Type:Page|contacts]] assigned to a task or group.
+
+Has a [[Has default form::Form:Contact]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Last updated</title>
+    <id>4270</id>
+    <revision>
+      <id>9156</id>
+      <timestamp>2007-11-28T02:49:55Z</timestamp>
+      <contributor>
+        <username>Jon Phillips</username>
+        <id>12</id>
+      </contributor>
+      <comment>New page: [[has type::Type:Date]]</comment>
+      <text xml:space="preserve">[[has type::Type:Date]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:MainURL</title>
+    <id>5223</id>
+    <revision>
+      <id>14927</id>
+      <timestamp>2008-05-08T19:22:16Z</timestamp>
+      <contributor>
+        <username>Andy Brooks</username>
+        <id>53</id>
+      </contributor>
+      <comment>New page: [[has type::Type:URL]]</comment>
+      <text xml:space="preserve">[[has type::Type:URL]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:PDF</title>
+    <id>5225</id>
+    <revision>
+      <id>14939</id>
+      <timestamp>2008-05-08T19:44:31Z</timestamp>
+      <contributor>
+        <username>Andy Brooks</username>
+        <id>53</id>
+      </contributor>
+      <text xml:space="preserve">[[has type::Type:Page]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Phone</title>
+    <id>3670</id>
+    <revision>
+      <id>7418</id>
+      <timestamp>2007-11-01T08:45:51Z</timestamp>
+      <contributor>
+        <username>Jon Phillips</username>
+        <id>12</id>
+      </contributor>
+      <minor/>
+      <comment>[[Attribute:Contact phone]] moved to [[Attribute:Phone]]</comment>
+      <text xml:space="preserve">[[has type::Type:String]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Presented at</title>
+    <id>5228</id>
+    <revision>
+      <id>14999</id>
+      <timestamp>2008-05-09T07:22:39Z</timestamp>
+      <contributor>
+        <username>Andy Brooks</username>
+        <id>53</id>
+      </contributor>
+      <comment>New page: [[has type::Type:Page]]</comment>
+      <text xml:space="preserve">[[has type::Type:Page]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Priority</title>
+    <id>3672</id>
+    <revision>
+      <id>7680</id>
+      <timestamp>2007-11-02T21:58:07Z</timestamp>
+      <contributor>
+        <username>Jon Phillips</username>
+        <id>12</id>
+      </contributor>
+      <text xml:space="preserve">'''Status''' is an [[has type::Type:Enumeration|enumeration]] which describes the priority of a [[Template:Task|task]].  Valid values:
+
+* [[allows value:=1]]
+* [[allows value:=2]]
+* [[allows value:=3]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Project</title>
+    <id>3689</id>
+    <revision>
+      <id>10914</id>
+      <timestamp>2008-01-24T19:33:40Z</timestamp>
+      <contributor>
+        <ip>127.0.0.1</ip>
+      </contributor>
+      <minor/>
+      <comment>[[Relation:Project]] moved to [[Property:Project]]: Unifying properties</comment>
+      <text xml:space="preserve">One or more [[has type::Type:Page|projects]] a task is assigned to.</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Related group is</title>
+    <id>4271</id>
+    <revision>
+      <id>10916</id>
+      <timestamp>2008-01-24T19:33:40Z</timestamp>
+      <contributor>
+        <ip>127.0.0.1</ip>
+      </contributor>
+      <minor/>
+      <comment>[[Relation:Related group is]] moved to [[Property:Related group is]]: Unifying properties</comment>
+      <text xml:space="preserve">One or more [[has type::Type:Page|groups]] related to a task.
+
+Has a [[Has default form::Form:Group]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Reminder at</title>
+    <id>5431</id>
+    <revision>
+      <id>15683</id>
+      <timestamp>2008-06-16T21:39:00Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <comment>New page: [[Has type::Type:Integer]]</comment>
+      <text xml:space="preserve">[[Has type::Type:Integer]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:ScribdURL</title>
+    <id>5224</id>
+    <revision>
+      <id>14929</id>
+      <timestamp>2008-05-08T19:23:54Z</timestamp>
+      <contributor>
+        <username>Andy Brooks</username>
+        <id>53</id>
+      </contributor>
+      <comment>New page: [[has type::Type:URL]]</comment>
+      <text xml:space="preserve">[[has type::Type:URL]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Send task notices</title>
+    <id>4979</id>
+    <revision>
+      <id>13362</id>
+      <timestamp>2008-04-11T22:24:09Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <comment>New page: [[Has type::Type:Boolean]]</comment>
+      <text xml:space="preserve">[[Has type::Type:Boolean]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Staff</title>
+    <id>4238</id>
+    <revision>
+      <id>10918</id>
+      <timestamp>2008-01-24T19:33:40Z</timestamp>
+      <contributor>
+        <ip>127.0.0.1</ip>
+      </contributor>
+      <minor/>
+      <comment>[[Relation:Staff]] moved to [[Property:Staff]]: Unifying properties</comment>
+      <text xml:space="preserve">One or more [[has type::Type:Page|CC contacts]] assigned to a task or group.
+
+Has a [[Has default form::Form:CC_Contact]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Staff contact is</title>
+    <id>4241</id>
+    <revision>
+      <id>10920</id>
+      <timestamp>2008-01-24T19:33:40Z</timestamp>
+      <contributor>
+        <ip>127.0.0.1</ip>
+      </contributor>
+      <minor/>
+      <comment>[[Relation:Staff contact is]] moved to [[Property:Staff contact is]]: Unifying properties</comment>
+      <text xml:space="preserve">One or more [[has type::Type:Page|staff contacts]] assigned to a task or group.
+
+Has a [[Has default form::Form:Staff Contact]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Start date</title>
+    <id>3526</id>
+    <revision>
+      <id>5976</id>
+      <timestamp>2007-09-10T23:10:14Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <minor/>
+      <comment>New page: [[has type::Type:Date]]</comment>
+      <text xml:space="preserve">[[has type::Type:Date]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Status</title>
+    <id>3525</id>
+    <revision>
+      <id>10974</id>
+      <timestamp>2008-01-25T18:14:07Z</timestamp>
+      <contributor>
+        <username>Paulproteus</username>
+        <id>44</id>
+      </contributor>
+      <text xml:space="preserve">'''Status''' is an [[has type::Type:Enumeration|enumeration]] which describes the status of a [[Template:Task|task]].  Valid values:
+
+* [[allows value:=New|New]]
+* [[allows value:=In Progress|In Progress]]
+* [[allows value:=Completed|Completed]]
+* [[allows value:=Deferred|Deferred]]
+* [[allows value:=Cancelled|Cancelled]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Tag</title>
+    <id>3562</id>
+    <revision>
+      <id>10933</id>
+      <timestamp>2008-01-24T20:03:17Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <text xml:space="preserve">[[has type::Type:Page]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Target date</title>
+    <id>3510</id>
+    <revision>
+      <id>5914</id>
+      <timestamp>2007-09-10T18:08:12Z</timestamp>
+      <contributor>
+        <username>Nathan Yergler</username>
+        <id>2</id>
+      </contributor>
+      <comment>New page: [[has type::Type:Date]]</comment>
+      <text xml:space="preserve">[[has type::Type:Date]]</text>
+    </revision>
+  </page>
+  <page>
+    <title>Property:Website</title>
+    <id>3671</id>
+    <revision>
+      <id>7873</id>
+      <timestamp>2007-11-05T23:57:05Z</timestamp>
+      <contributor>
+        <username>Jon Phillips</username>
+        <id>12</id>
+      </contributor>
+      <minor/>
+      <comment>[[Relation:Website]] moved to [[Attribute:Website]] over redirect</comment>
+      <text xml:space="preserve">[[has type::Type:URL]]</text>
+    </revision>
+  </page>
+</mediawiki>
