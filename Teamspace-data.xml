@@ -39,8 +39,8 @@
     <title>Template:Task</title>
     <id>3509</id>
     <revision>
-      <id>15921</id>
-      <timestamp>2008-06-20T15:38:37Z</timestamp>
+      <id>16603</id>
+      <timestamp>2008-07-09T22:52:38Z</timestamp>
       <contributor>
         <username>Steren Giannini</username>
         <id>66</id>
@@ -58,6 +58,8 @@
 '''% Completeness:''' {{ #if: {{{completeness|}}} | [[completeness::{{{completeness}}}]]% | not specified }}
 
 '''Assigned To:''' {{#if: {{{assigned to|}}} | {{#arraymap:{{{assigned to}}}|,|x|[[assigned to::User:x]]}} | no one }}
+
+'''c.c.:''' {{ #if: {{{carbon copy|}}} | {{#arraymap:{{{carbon copy}}}|,|x|[[Carbon copy::User:x]]}} | no one }}
 
 '''Projects:''' {{ #if: {{{projects|}}} | {{#arraymap:{{{projects}}}|,|x|[[Belongs to project::x]]}} | (none) }}
 
@@ -84,7 +86,6 @@
 
 '''Reminder at:''' {{ #if: {{{reminder|}}} | {{#arraymap:{{{reminder}}}|,|x|[[Reminder at::x]]}} | 0 }}
 
-
 &lt;headertabs/&gt;
 __NOTOC__
 [[Category:Task]]</text>
@@ -94,13 +95,12 @@ __NOTOC__
     <title>Form:Task</title>
     <id>3521</id>
     <revision>
-      <id>15923</id>
-      <timestamp>2008-06-20T15:44:15Z</timestamp>
+      <id>16601</id>
+      <timestamp>2008-07-09T22:50:55Z</timestamp>
       <contributor>
         <username>Steren Giannini</username>
         <id>66</id>
       </contributor>
-      <comment>hide tabler of content</comment>
       <text xml:space="preserve">__NOTOC__
 &lt;noinclude&gt;
 This is the 'Task' form; edit the page to see the source code. You can add data with this form [[Special:AddPage/Task|here]].
@@ -117,6 +117,7 @@ This is the 'Task' form; edit the page to see the source code. You can add data 
    &lt;p&gt;&lt;strong&gt;Priority:&lt;/strong&gt; {{{field|priority|default=2}}}&lt;/p&gt;
    &lt;p&gt;&lt;strong&gt;% Complete:&lt;/strong&gt; {{{field|completeness|default=0}}}&lt;/p&gt;
    &lt;p&gt;&lt;strong&gt;Assigned to:&lt;/strong&gt; {{{field|assigned to|list|autocomplete on namespace=User}}}&lt;/p&gt;
+   &lt;p&gt;&lt;strong&gt;c.c.:&lt;/strong&gt; {{{field|carbon copy|list|autocomplete on namespace=User}}}&lt;/p&gt;
    &lt;p&gt;&lt;strong&gt;Projects:&lt;/strong&gt; {{{field|projects|list|autocomplete on=Project}}}&lt;/p&gt;
    &lt;p&gt;&lt;strong&gt;Tags:&lt;/strong&gt; {{{field|tags}}}&lt;/p&gt;
 
@@ -395,8 +396,8 @@ The '''Project''' category is used to categorize projects CC works on...
     <title>Template:Project Group</title>
     <id>4769</id>
     <revision>
-      <id>14640</id>
-      <timestamp>2008-04-30T21:37:11Z</timestamp>
+      <id>16432</id>
+      <timestamp>2008-07-03T22:35:07Z</timestamp>
       <contributor>
         <username>Nathan Yergler</username>
         <id>2</id>
@@ -439,7 +440,7 @@ Target date
 [[Target date::*]]
 [[Tag::*]]
 | mainlabel=Task
-| sort=Status
+| sort=Target_date
 }}
 
 = Completed Tasks =
@@ -909,6 +910,20 @@ Has a [[Has default form::Form:Project]]</text>
     </revision>
   </page>
   <page>
+    <title>Property:Carbon copy</title>
+    <id>5645</id>
+    <revision>
+      <id>16598</id>
+      <timestamp>2008-07-09T22:49:53Z</timestamp>
+      <contributor>
+        <username>Steren Giannini</username>
+        <id>66</id>
+      </contributor>
+      <comment>New page: [[has type::Type:Page|users]] who follow a task</comment>
+      <text xml:space="preserve">[[has type::Type:Page|users]] who follow a task</text>
+    </revision>
+  </page>
+  <page>
     <title>Property:Category</title>
     <id>3578</id>
     <revision>
@@ -1202,11 +1217,11 @@ The allowed values for this property are:
     <title>Property:Has grant status</title>
     <id>5075</id>
     <revision>
-      <id>14349</id>
-      <timestamp>2008-04-24T22:33:42Z</timestamp>
+      <id>16179</id>
+      <timestamp>2008-06-26T22:48:01Z</timestamp>
       <contributor>
-        <username>Nathan Yergler</username>
-        <id>2</id>
+        <username>Paulproteus</username>
+        <id>44</id>
       </contributor>
       <text xml:space="preserve">This is a property of type [[Has type::String|String]].
 
@@ -1216,6 +1231,7 @@ The allowed values for this property are:
 * [[Allows value:=in process - contract negotiation]]
 * [[Allows value:=in process - proposal due]]
 * [[Allows value:=in process - proposal submitted]]
+* [[Allows value:=deferred]]
 * [[Allows value:=closed]]</text>
     </revision>
   </page>
