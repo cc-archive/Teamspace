@@ -174,11 +174,11 @@ This is the 'Task' form; edit the page to see the source code. You can add data 
     <title>Template:User Tasks</title>
     <id>4942</id>
     <revision>
-      <id>13763</id>
-      <timestamp>2008-04-23T19:03:20Z</timestamp>
+      <id>16609</id>
+      <timestamp>2008-07-09T23:14:06Z</timestamp>
       <contributor>
-        <username>Nathan Yergler</username>
-        <id>2</id>
+        <username>Steren Giannini</username>
+        <id>66</id>
       </contributor>
       <text xml:space="preserve">__NOTOC__
 
@@ -232,6 +232,17 @@ Target date
 [[Category:Task]] 
 [[Assigned to::{{{1|{{NAMESPACE}}:{{PAGENAME}}}}}]]
 [[Status::Completed]]
+[[Status::*]]
+[[Target date::*]]
+| sort=Target_date
+}}
+
+= Followed Tasks =
+
+{{#ask:
+[[Category:Task]] 
+[[Carbon copy::{{{1|{{NAMESPACE}}:{{PAGENAME}}}}}]]
+[[Assigned to::*]]
 [[Status::*]]
 [[Target date::*]]
 | sort=Target_date
