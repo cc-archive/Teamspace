@@ -1,10 +1,13 @@
-== About ==
+# CC Teamspace
+
 See http://wiki.creativecommons.org/CcTeamspace for up to date information.
 
 CcTeamspace is the internal task and project tracking system used at Creative Commons. It is powered by Semantic Media Wiki. 
 
 CcTeamspace can be considered as a web-based collaborative project management software. It is in fact only a wiki data structure to be used on a MediaWiki platform.
+
 The main features are :
+
 * Project and task management system with calendar and mail notifications.
 * Staff, companies and groups management 
 * Traditional wiki features (pages, links, images...)
@@ -12,12 +15,13 @@ The main features are :
 
 Notes on installing CcTeamspace can be found in the file INSTALL.
 
-== Credits ==
+## Credits
 
 CcTeamspace was written by the CreativeCommons Staff.
+
 For comments, questions, suggestions or bug reports please contact steren.giannini@gmail.com
 
-== Manual ==
+## Manual
 
 Usage and FAQ
 
@@ -27,7 +31,7 @@ Usage and FAQ
        {{Staff}}
        {{User Tasks}}
 
-How to
+### HOWTO:
 
     Add a task: On an user page, click on Add task or go to the page Special:AddPage/Task
 
@@ -49,3 +53,9 @@ How to
     Get the list of the staff: Go to the page Category:Staff
 
     Get the list of all the users of CcTeamSpace: Go to the page Special:Listusers. 
+
+## Support
+
+Problems? Write to us at hackers@creativecommons.org or send us a pull request...
+
+Updated: April 2014.
